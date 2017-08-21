@@ -1,0 +1,171 @@
+body {
+  height: 100vh;
+  margin: 0px;
+  color: rgba(0, 0, 0, 0.67);
+  --default-border-radius: 4px;
+  --default-border-color: #b3b3b3;
+  --input-placeholder-color: rgba(0, 0, 0, 0.34);
+  --light-text-color: rgba(0, 0,0, 0.52);
+  --link-text-color: #3898dc;
+  --dark-link-text-color: #256593;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    var(--input-placeholder-color);
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    var(--input-placeholder-color);
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    var(--input-placeholder-color);
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    var(--input-placeholder-color);
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+   color:    var(--input-placeholder-color);
+}
+
+button {
+  border: none;
+  border-radius: var(--default-border-radius);
+}
+
+.chatBox {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.chatBox > div {
+  text-align: end;
+}
+
+nav {
+  display: inline-block;
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0px;
+}
+
+nav li {
+  display:inline-block;
+  border-bottom:1px solid lightgray;
+  margin-left:-20px;
+  cursor: pointer;
+}
+
+nav a {
+  color:transparent;
+  text-shadow: 0 0 0 var(--input-placeholder-color);
+  background-color: lightgray;
+  position:relative;
+  display:inline-block;
+  margin:0 23px;
+  padding:8px 11px;
+  border-radius:4px 3px 0 0;
+  width: 65px;
+  font-size: 12px;
+  border-top: 1px solid #c9c9c9;
+  text-align: center;
+}
+
+nav a:before,
+nav a:after {
+  content:" ";
+  position: absolute;
+  top:0;
+  width: 23px;
+  height: 100%;
+  background-color: inherit;
+}
+
+nav a:before {
+  border-radius: 4px 0 0 0;
+  transform: skew(-32deg);
+  left: -12px;
+  border-left: 1px solid #c9c9c9;
+}
+
+nav a:after {
+  border-radius: 0 4px 0 0;
+  transform: skew(32deg);
+  right: -13px;
+  border-right: 1px solid #c9c9c9;
+  z-index: 1;
+}
+
+/* LI ACTIVE  */
+nav li.active {
+   border-bottom:1px solid #f2f2f2;
+}
+
+nav li.active a {
+  background:#f2f2f2;
+}
+
+nav li.active a:before {
+  z-index: 1; /* overlap prev element */
+}
+
+nav li.active a:after {
+   border-bottom:1px solid #f2f2f2;
+}
+
+.crossContainer {
+  border-top: 33px solid black;
+  display: inline-block;
+  padding-bottom: -1px;
+  border-left: 20px solid transparent;
+  width: 30px;
+  margin-left: -24px;
+  box-sizing: border-box;
+  padding-bottom: -5px;
+  text-align: center;
+  position: relative;
+  top: 27px;
+  cursor: pointer;
+}
+
+.crossContainer > p {
+  margin: 0;
+  position: relative;
+  top: -27px;
+  color: white;
+  left: -2px;
+  font-weight: 900;
+  font-family: sans-serif;
+}
+
+.hideTabs {
+  display: none;
+}
+
+.defaultTab {
+  display: block;
+}
+
+.tabContainer {
+  background-color: #f2f2f2;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.4), 0 0 10px rgba(0, 0, 0, 0.29);
+}
+
+input:focus,
+input:hover,
+textarea:focus,
+textarea:hover {
+  outline: none;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.30);
+  transition: box-shadow 0.3s;
+  border: 1px solid rgba(63, 169, 245, 1);
+}
+
+input,
+textarea {
+  border: 1px solid #e0e0e0;
+  border-radius: var(--border-radius);
+  transition: box-shadow 0.3s;
+}

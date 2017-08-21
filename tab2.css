@@ -1,0 +1,133 @@
+#tab1 {
+  display: flex;
+  width: 100vw;
+  height: 40vh;
+}
+
+.mailUs {
+  height: inherit;
+  display: flex;
+  border-right: 1px solid var(--default-border-color);
+  flex-direction: column;
+  padding-right: 40px;
+  padding-left: 50px;
+  justify-content: center;
+  flex: 1;
+}
+
+.mailUs > * {
+  text-align: center;
+  margin: 10px 0px;
+}
+
+.mailUs > button {
+  align-self: center;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.40);
+  padding: 3px 18px;
+  background: -webkit-gradient( linear, left top, left bottom, from(#fdfdfd), to(#d9d9d9));
+  font-size: 16px;
+}
+
+.mailUs button > .mailText {
+  color: rgba(0, 0, 0, 0.50);
+}
+
+.mailUs button > .mailIcon {
+  font-size: 17px;
+}
+
+.quickLinks {
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex: 2;
+  width: 100%;
+  margin-top: 15px;
+  padding-left: 40px;
+  padding-right: 100px;
+}
+
+.quickLinks input[type=text] {
+  --input-box-height: 35px;
+  background-image: url(Assets/searchicon.png);
+  background-repeat: no-repeat;
+  border-radius: 50px;
+  height: var(--input-box-height);
+  padding: 0px 29px;
+  font-size: 16px;
+  background-size: 16px;
+  background-position-y: calc(var(--input-box-height)/4);
+  background-position-x: 10px;
+}
+
+
+
+.quickLinks > div {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: space-around;
+}
+
+.quickLinks div > a {
+  --icon-color: #2c76ab;
+  display: flex;
+  height: 85px;
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 25%;
+  min-width: 170px;
+  font-size: 18px;
+  text-decoration: none;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+  color: var(--link-text-color);
+}
+
+.quickLinks div > a:hover,
+.quickLinks div > a:focus {
+  --link-text-color: var(--dark-link-text-color);
+  --icon-color: var(--link-text-color);
+  background-color: white;
+  transition: background-color 0.3s, border-color 0.3s;
+  border: 1px solid var(--default-border-color);
+  border-radius: var(--default-border-radius);
+}
+
+.mailHeader {
+  font-size: 30px;
+}
+
+.mailEncourage {
+  font-size: 18px;
+  font-weight: 200;
+  color: var(--light-text-color);
+}
+
+.quickLinksIcons {
+  --icon-width: 29px;
+  color: transparent;
+  border-radius: 50px;
+  font-size: 20px;
+  border: 2px solid var(--icon-color);
+  text-shadow: 0 0 0 var(--icon-color);
+  width: var(--icon-width);
+  margin-left: calc(50% - var(--icon-width)/2);
+  margin-bottom: 6px;
+}
+
+@media screen and (max-width: 802px) {
+  .mailUs {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 519px) {
+  .quickLinks input[type=text] {
+    --input-box-height: 60px;
+    background-position-y: 5px;
+  }
+}
